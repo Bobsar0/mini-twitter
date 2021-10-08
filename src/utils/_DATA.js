@@ -1,4 +1,10 @@
 let users = {
+  bobsar0: {
+    id: "bobsar0",
+    name: "Steve Onyeneke",
+    avatarURL: "https://avatars.githubusercontent.com/u/19636985?s=400&u=83250a7e45b53ad8ce353c580c0321bc09d1653c&v=4",
+    tweets: ['1zf0y6ziyjabvozdd253ne'],
+  },
   sarah_edo: {
     id: "sarah_edo",
     name: "Sarah Drasner",
@@ -20,6 +26,15 @@ let users = {
 }
 
 let tweets = {
+    "1zf0y6ziyjabvozdd253ne": {
+    id: "1zf0y6ziyjabvozdd253ne",
+    text: "He that dwells in the secret place of the Most High, shall abide under the shadow of the Almighty!",
+    author: "bobsar0",
+    timestamp: 1519122597860,
+    likes: ['tylermcginnis, sarah_edo, dan_abramov'],
+    replies: [],
+    replyingTo: null,
+  },
   "8xf0y6ziyjabvozdd253nd": {
     id: "8xf0y6ziyjabvozdd253nd",
     text: "Shoutout to all the speakers I know for whom English is not a first language, but can STILL explain a concept well. It's hard enough to give a good talk in your mother tongue!",
@@ -200,6 +215,15 @@ let tweets = {
     replyingTo: "6h5ims9iks66d4m7kqizmv",
     replies: [],
   },
+  "2yf0y6ziyjabvozdd253ne": {
+    id: "2yf0y6ziyjabvozdd253ne",
+    text: "Arise, shine; for thy light is come, and the glory of the Lord is risen upon thee",
+    author: "bobsar0",
+    timestamp: 1518054395650,
+    likes: ['tylermcginnis, sarah_edo, dan_abramov'],
+    replies: [],
+    replyingTo: null,
+  }
 }
 
 export function _getUsers () {
