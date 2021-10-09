@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleAddTweet } from '../actions/tweets'
+import { Redirect } from 'react-router-dom'
 
 // controlled component
 // react is going to be in control of the text of the input field because we'll be updating the submit button based on the current state of the input field
 class NewTweet extends Component{
   state = {
     text: '',
+    toHome: false,
   }
 
   handleChange = (e) => {
@@ -26,13 +28,18 @@ class NewTweet extends Component{
     dispatch(handleAddTweet(text, id))
     
     this.setState(() => ({
-      text: ''
+      text: '',
+      toHome: id ? false : true // go to home page only when we're composing new tweet. id is valid only when we're replying to a tweet
     }))
   }
 
   render() {
-    const { text } = this.state
+    const { text, toHome } = this.state
     // todo: redirect to homeView if submitted
+
+    if(toHome === true) {
+      return <Redirect to='/' />
+    }
 
     const maxLength = 280
     const tweetLeft = maxLength - text.length
