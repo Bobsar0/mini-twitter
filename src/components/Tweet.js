@@ -1,20 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {formatTweet, formatDate} from '../utils/helpers'
-import { IoArrowUndoOutline }from 'react-icons/io5'
-import { IoHeartOutline}from 'react-icons/io5'
+import { IoArrowUndoOutline, IoHeart, IoHeartOutline }from 'react-icons/io5'
+import { handleToggleTweet } from '../actions/tweets'
 
 class Tweet extends Component {
   handleLike = (e) => {
     e.preventDefault()
-    //todo: handle like tweet
+    
+    const {dispatch, tweet, authedUser } = this.props
+    dispatch(handleToggleTweet({
+      id: tweet.id,
+      hasLiked: tweet.hasLiked,
+      authedUser
+    }))
   }
 
   toParent = (e, id) => {
     e.preventDefault()
     //todo: redirect to parent tweet
   }
-  
+
   render() {
     const { tweet } = this.props
 
@@ -44,7 +50,7 @@ class Tweet extends Component {
             <span>{replies !== 0 && replies}</span>
             <button className='heart-button' onClick={this.handleLike}>
               {hasLiked === true 
-              ? <span>liked!<IoHeartOutline color='#e0245e' className='tweet-icon' /></span>
+              ? <IoHeart color='#e0245e' className='tweet-icon' />
               : <IoHeartOutline className='tweet-icon' />}
             </button>
             <span>{likes !== 0 && likes}</span>

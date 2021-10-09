@@ -217,7 +217,7 @@ let tweets = {
   },
   "2yf0y6ziyjabvozdd253ne": {
     id: "2yf0y6ziyjabvozdd253ne",
-    text: "Arise, shine; for thy light is come, and the glory of the Lord is risen upon thee",
+    text: "Arise, shine; for thy light is come, and the glory of the Lord is risen upon thee.",
     author: "bobsar0",
     timestamp: 1518054395650,
     likes: ['tylermcginnis, sarah_edo, dan_abramov'],
