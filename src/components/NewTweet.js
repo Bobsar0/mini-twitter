@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { handleAddTweet } from '../actions/tweets'
 
 // controlled component
 // react is going to be in control of the text of the input field because we'll be updating the submit button based on the current state of the input field
@@ -20,9 +21,10 @@ class NewTweet extends Component{
     e.preventDefault()
 
     const { text } = this.state
-
-    //todo: add tweet to store
-
+    const {dispatch, id } = this.props
+    //add tweet to store
+    dispatch(handleAddTweet(text, id))
+    
     this.setState(() => ({
       text: ''
     }))
@@ -62,4 +64,4 @@ class NewTweet extends Component{
   }
 }
 
-export default NewTweet
+export default connect()(NewTweet)
